@@ -9,10 +9,8 @@
   }
 
   NoteList.prototype.showNotes = function() {
-    for (var i = 0; i < this.notes.length; i++) {
-      return this.notes[i].showNote();
-    }
+    return this.notes;
   }
 
-  exports.NoteList = NoteLists
+  exports.NoteList = NoteList
 })(this)

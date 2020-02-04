@@ -13,12 +13,12 @@
   console.log('addNoteList test passing')
 })();
 
-(function listNotes() {
-  var notelist = new NoteList()
+// (function listNotes() {
+//   var notelist = new NoteList()
   
-  notelist.add('hello')
-  notelist.add('test')
-  console.log(notelist.showNotes())
-  assert.isTrue(notelist.showNotes() == 'hello', 'test')
-  console.log("listNotes test")
-})();
+//   notelist.add('hello')
+//   notelist.add('test')
+//   console.log(notelist.showNotes())
+//   assert.isTrue(notelist.showNotes() == 'hello', 'test')
+//   console.log("listNotes test")
+// })();
