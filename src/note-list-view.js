@@ -6,7 +6,8 @@
   NoteListView.prototype.display = function() {
     var array = ["<ul>"]
     for(var i = 0; i < this.noteList.notes.length; i++) {
-      array.push("<li><div>" + this.noteList.notes[i].showNote() + "</div></li>")
+      if(this.noteList.notes[i].showNote().length > 20 ) { array.push("<li><div>" + this.noteList.notes[i].showNote().slice(0,20) + "</div></li>")} 
+      else { array.push("<li><div>" + this.noteList.notes[i].showNote() + "</div></li>") }
     }
     array.push("</ul>")
     return array.join("")
