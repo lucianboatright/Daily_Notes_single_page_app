@@ -1,10 +1,12 @@
-function NoteController(){
+function NoteController(doc = document){
 
   this.noteListView = new NoteListView()
   this.noteList = this.noteListView.noteList
+  this.doc = doc
 
   NoteController.prototype.add = function(string){
-    this.noirbd(string)
+    this.note = new Note()
+    this.noteList.add(string)
   }
 
 
@@ -14,17 +16,15 @@ function NoteController(){
 
   NoteController.prototype.insert = function(){
     var message = this.htmlify()
-    var element = document.getElementById("app") 
+    var element = this.doc.getElementById("app")
 
     element.innerHTML = message
   }
 
 
   NoteController.prototype.greeting = function(message){
-    var element = document.getElementById("app")
-    console.log(element)
-    console.log(message)
-    console.log(document.getElementById("app"))
+    var element = this.doc.getElementById("app")
+
     element.innerHTML = message
   }
 

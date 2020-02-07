@@ -1,42 +1,26 @@
-(function testNoteControllerInstance(){
 
-  var noteControler = new NoteContoller
 
-  assert.isTrue(noteControler.noteList instanceof NoteContoller)
-  assert.isTrue(noteControler.noteListView.noteList instanceof NoteContoller)
+
+(function testAdd() {
+  var noteController = new NoteController();
+  var note = new Note
+  var noteList = new NoteList
+  noteController.add('Hello')
+  assert.isTrue(noteController.noteList.notes.length === 1)
+  assert.isTrue(noteController.noteList.notes[0].showNote() === 'Hello')
+  console.log("testAdd passing")
+
 })();
 
-(function testNoteControllerAdd(){
-  var noteControler = new NoteContoller();
-  noteControler.insert('string')
-  assert.isTrue(noteControler.noteList.list.length === 1)
-  assert.isTrue(noteControler.noteList.list[0] == 'string')
-  // assert.isTrue(noteControler.noteList.list instanceof Note)
-
-
-
-})
+(function testHtmlify() {
+  var noteController = new NoteController();
+  noteController.add('Hello')
+  assert.isTrue(noteController.htmlify() === '<ul><li><div>Hello</div></li></ul>')
+  console.log("testHtmlify passing")
+})();
 
 
 
 
-  // function NoteDouble(){}
 
-  // NoteDouble.prototype = {
-  //   add: function(){}
-  // };
-
-  // var note = new NoteContoller()
-
-  // note.add = function(){
-  //   return this.noteList.add()
-  // }
-
-  // var noteDouble = new NoteDouble('hello');
-  // var noteList = new NoteList(note);
-
-  // noteList.add(noteDouble)
-
-  // assert.isTrue(noteList.add(noteDouble) === 'hello')
-  // // console.log(noteList.add(noteDouble))
 
